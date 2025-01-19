@@ -258,6 +258,11 @@ a {
                   }
             }
             .input_type {
+                  input{
+                        &::placeholder{
+                              font-size: 12px;
+                        }
+                  }
                   .suggestions-list {
                         width: 119%;
                   }
