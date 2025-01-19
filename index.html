@@ -1,33 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Suttle Services website Development</title>
       <link rel="stylesheet" href="./css/style.css">
-      <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTacsQfbV1v7rtNUdPh3rwn2dasPuwq5Oiefw&s">
+      <link rel="shortcut icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTacsQfbV1v7rtNUdPh3rwn2dasPuwq5Oiefw&s">
       <!-- font awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
       <!-- font -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
 </head>
+
 <body>
 
       <section class="Top_header inner">
             <div class="address_location">
-                  <h4><i class="fa-solid fa-location-dot"></i> 12/A Collage road, Cap Town, South Affrica.</h4>
+                  <h4><i class="fa-solid fa-location-dot"></i> 12/A College road, Cap Town, South Affrica.</h4>
             </div>
             <div class="social">
-                <ul>
-                  <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                  <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                  <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                  <li><a href=""><i class="fa-solid fa-ticket"></i></a></li>
-                </ul>
+                  <ul>
+                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa-solid fa-ticket"></i></a></li>
+                  </ul>
             </div>
       </section>
-      
+
+      <!-- hero area -->
+      <section class="hero_area">
+            <div class="content_box">
+                  <h1>Stay updated with real-time load shedding schedules across South Africa</h1>
+                  <p>Whether you're looking for the Eskom loadshedding schedule or the loadshedding schedule for your
+                        municipality, we've got you covered. Start your search below.</p>
+            </div>
+            <h1>Find The Loadshedding Schedule For Your Area</h1>
+            <div class="input_type">
+                  <div class="input_box">
+                        <input type="search" id="cityInput" placeholder="Enter your suburb or town">
+                        <ul id="suggestions" class="suggestions-list"></ul>
+                  </div>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+      </section>
+
+
+
+      <script>
+            const cities = [
+                  "Khayelitsha, block 5, City of Cape Town (Cape Town), Western Cape[Eskom]",
+                  "Mitchells Plain, block 4, City of Cape Town (Cape Town), Western Cape [City of Cape Town Municipality]",
+                  "Strand, block 3, City of Cape Town (Cape Town), Western Cape [City of Cape Town Municipality]",
+                  "Stellenbosch, block 2, Stellenbosch, Western Cape [Municipality]",
+                  "Paarl, block 9, Drakenstein, Western Cape [Drakenstein Municipality]",
+                  "Thohoyandou, block 7, Thulamela, Limpopo [Eskom]",
+                  "Kuruman, block 9, Ga Segonyana, Nothern Cape[Ga Segonyana Municipality]",
+                  "Braamfontein, block 6, JHB City Power (Johanesburg), Gauteng [ JHB City Power Municipality]",
+                  "Roodepoort, block 16,  JHB City Power (Johanesburg), Gauteng [ JHB City Power Municipality]",
+                  "Thembisa, block 11, Ekurhuleni, Gauteng [Ekurhuleni Municipality]",
+                  "Katlehong, block 6, Ekurhuleni, Gauteng [Eskom]",
+                  "Pretoria, CHB block 14, Tshwane (Pretoria), Gauteng [Tshwane Municipality]",
+                  "Mamelodi, block 5, Tshwane (Pretoria), Gauteng [Tshwane Municipality]",
+                  "Potchefstroom, block 5, JB Marks, North West [JB Marks Municipality]",
+                  "Witbank, CBD, block 4, Emalahleni, (Witbank) Mpumulanga [Emalahleni Municipality]",
+                  "George, block 12, George, Western [George Municipality]",
+                  "Mmabatho, block 10, Mafikeng, North West [Eskom]",
+                  "Umlazi West, block 7, Ethekwini, kwazulu Natal [Ethekwini Municipality]"
+            ];
+
+            const input = document.getElementById('cityInput');
+            const suggestions = document.getElementById('suggestions');
+
+            // Populate suggestions
+            function populateSuggestions(query = '') {
+                  suggestions.innerHTML = ''; // Clear previous suggestions
+
+                  const filteredCities = cities.filter(city =>
+                        city.toLowerCase().startsWith(query.toLowerCase())
+                  );
+
+                  filteredCities.forEach(city => {
+                        const li = document.createElement('li');
+                        li.textContent = city;
+                        li.addEventListener('click', () => {
+                              input.value = city; // Set the input value to the clicked suggestion
+                              suggestions.innerHTML = ''; // Clear suggestions
+                        });
+                        suggestions.appendChild(li);
+                  });
+            }
+
+            // Handle input event
+            input.addEventListener('input', function () {
+                  const query = this.value;
+                  populateSuggestions(query);
+            });
+
+            // Show all suggestions on focus
+            input.addEventListener('focus', function () {
+                  populateSuggestions();
+            });
+
+            // Hide suggestions when input loses focus
+            input.addEventListener('blur', function () {
+                  setTimeout(() => {
+                        suggestions.innerHTML = ''; // Clear suggestions
+                  }, 100); // Small delay to allow click event on suggestions
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                  setTimeout(() => {
+                        const contentBox = document.querySelector('.content_box');
+                        contentBox.classList.add('show'); // `show` ক্লাস যোগ করা
+                  }, 1000); // 1 সেকেন্ড পর দেখানো হবে
+            });
+      </script>
+
 </body>
+
 </html>
