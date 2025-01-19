@@ -74,13 +74,13 @@ a {
       background-size: cover;
 
       h1 {
-            padding: 20px 0;
-            font-size: 30px;
             color: #000;
+            padding: 10px 10px;
+            font-size: 28px;
       }
 
       .content_box {
-            width: 70%;
+            width: 50%;
             margin: 0 auto;
             padding: 10px;
             background: #30859c;
@@ -96,7 +96,7 @@ a {
 
             p {
                   font-size: 16px;
-
+                  text-align: center;
             }
       }
 
@@ -106,7 +106,7 @@ a {
       }
 
       .input_type {
-            width: 70%;
+            width: 50%;
             height: auto;
             display: flex;
             align-items: center;
@@ -161,7 +161,7 @@ a {
                   border: 1px solid #ddd;
                   border-radius: 4px;
                   max-height: 200px;
-                  width: 104%;
+                  width: 106%;
                   overflow-y: auto;
                   list-style: none;
                   padding: 0;
